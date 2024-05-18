@@ -7,7 +7,10 @@ import Contact from "@/components/Contact";
 const HomePage = () => {
   return (
     <>
-      <h1>Home</h1>
+      <Intro />
+      <Portfolio />
+      <Timeline />
+      <Contact />
     </>
   );
 };

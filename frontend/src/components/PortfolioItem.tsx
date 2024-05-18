@@ -1,13 +1,18 @@
 import React from "react";
 
 interface PortfolioItemProps {
-    title: string;
-    imgUrl: string;
-    stack: string[];
-    link: string;
+  title: string;
+  imgUrl: string;
+  stack: string[];
+  link: string;
 }
 
-const PortfolioItem: React.FC<PortfolioItemProps> = ({ title = 'Missing', imgUrl = '', stack = ['None'], link = '' }) => {
+const PortfolioItem: React.FC<PortfolioItemProps> = ({
+  title = "Missing",
+  imgUrl = "",
+  stack = ["None"],
+  link = "",
+}) => {
   return (
     <div className="border-2 border-stone-900 rounded-md overflow-hidden">
       <img

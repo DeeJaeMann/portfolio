@@ -41,13 +41,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             alt={title}
             className="w-full object-cover cursor-pointer rounded-md"
           />
-          <CardDescription
-          className="mt-2 mx-2"
-          >
-            {details}
-            </CardDescription>
+          <CardDescription className="mt-2 mx-2">{details}</CardDescription>
         </CardContent>
-        <CardFooter className="flex-wrap justify-between mx-2 md:text-sm">
+        <CardFooter className="flex-wrap justify-around mx-2 md:text-sm">
           {stack.map((item) => (
             <Badge variant="outline" className="px-2 py-1 my-1">
               {item}

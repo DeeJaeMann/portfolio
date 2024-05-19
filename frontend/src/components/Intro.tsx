@@ -4,7 +4,7 @@ const Intro = () => {
       <h1 className="text-4xl font-bold md:text-7xl mb-1 md:mb-3 dark:text-white">
         Dee J. Mann
       </h1>
-      <p className="text-base mb-3 font-medium md:text-xl">Software Engineer</p>
+      <p className="text-base mb-3 font-medium md:text-xl">Software Engineer & Web Developer</p>
       <p className="text-sm max-w-xl mb-6 font-bold">Bio goes here</p>
     </div>
   );

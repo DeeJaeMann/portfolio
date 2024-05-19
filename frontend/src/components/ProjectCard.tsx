@@ -14,25 +14,26 @@ interface ProjectCardProps {
   imgUrl: string;
   stack: string[];
   link: string;
+  details: string;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   title = "Missing",
-  imgUrl = "",
+  imgUrl = "assets/blank.png",
   stack = ["None"],
   link = "",
+  details = "",
 }) => {
   return (
-    <a 
-        href={link} 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="overflow-hidden"
+    <a
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="overflow-hidden"
     >
       <Card>
         <CardHeader>
           <CardTitle>{title}</CardTitle>
-          <CardDescription>Description</CardDescription>
         </CardHeader>
         <CardContent>
           <img
@@ -40,14 +41,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             alt={title}
             className="w-full object-cover cursor-pointer rounded-md"
           />
+          <CardDescription
+          className="mt-2 mx-2"
+          >
+            {details}
+            </CardDescription>
         </CardContent>
         <CardFooter className="flex-wrap justify-between mx-2 md:text-sm">
           {stack.map((item) => (
-            <Badge 
-                variant="outline"
-                className="px-2 py-1 my-1"
-            >
-                {item}
+            <Badge variant="outline" className="px-2 py-1 my-1">
+              {item}
             </Badge>
           ))}
         </CardFooter>

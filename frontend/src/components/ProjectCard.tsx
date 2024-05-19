@@ -44,8 +44,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <CardDescription className="mt-2 mx-2">{details}</CardDescription>
         </CardContent>
         <CardFooter className="flex-wrap justify-around mx-2 md:text-sm">
-          {stack.map((item) => (
-            <Badge variant="outline" className="px-2 py-1 my-1">
+          {stack.map((item, index) => (
+            <Badge key={index} variant="outline" className="px-2 py-1 my-1">
               {item}
             </Badge>
           ))}

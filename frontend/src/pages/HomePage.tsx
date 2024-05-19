@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button"
 import Intro from "@/components/Intro";
 import Timeline from "@/components/Timeline";
 import Portfolio from "@/components/Portfolio";
 import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 const HomePage = () => {
   const [theme, setTheme] = useState("");
@@ -64,19 +66,20 @@ const HomePage = () => {
 
   return (
     <>
-      <button
-        type="button"
+      <Button 
+        variant="outline" 
+        size="icon"
         onClick={handleThemeSwitch}
-        className="fixed p-1 z-10 right-20 top-4 bg-violet-300 text-lg rounded-md dark:bg-orange-300"
-      >
+        className="fixed p-1 z-10 right-20 top-4 bg-violet-300 text-lg rounded-md hover:bg-violet-400 dark:bg-orange-300 dark:hover:bg-orange-400">
         {theme === "dark" ? sun : moon}
-      </button>
+      </Button>
       <div className="bg-white text-stone-900 min-h-screen font-inter dark:bg-stone-900 dark:text-stone-300">
         <div className="max-w-5xl w-11/12 mx-auto">
           <Intro />
           <Portfolio />
           <Timeline />
           <Contact />
+          <Footer />
         </div>
       </div>
     </>

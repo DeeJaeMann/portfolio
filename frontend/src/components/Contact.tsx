@@ -36,7 +36,9 @@ const Contact = () => {
       .max(254, {
         message: "Email must not be greater than 254 characters",
       }),
-    message: z.string(),
+    message: z.string().min(30, {
+      message: "Message must be at least 30 characters.",
+    }),
   });
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -86,52 +88,65 @@ const Contact = () => {
             Work With Me
           </button>
         </form>
-
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)}>
-            <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Name</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Name" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Email</FormLabel>
-                  <FormControl>
-                    <Input type="email" placeholder="Email" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="message"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Message</FormLabel>
-                  <FormControl>
-                    <Textarea rows={10} placeholder="Type message here" {...field} />
-                  </FormControl>
-                  <FormDescription>I will not share your contact info with anyone.</FormDescription>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <Button type="submit">Submit</Button>
-          </form>
-        </Form>
+        <div className="flex flex-col w-full md:w-7/12">
+          <Title>Contact</Title>
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)}>
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Name</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Name" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Email</FormLabel>
+                    <FormControl>
+                      <Input type="email" placeholder="Email" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="message"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Message</FormLabel>
+                    <FormControl>
+                      <Textarea
+                        rows={10}
+                        placeholder="Type message here"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormDescription>
+                      I will not share your contact info with anyone.
+                    </FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <Button
+                type="submit"
+                className="drop-shadow-md hover:bg-blue-500 bg-gradient-to-r from-cyan-600 to-blue-900 dark:to-cyan-600 dark:from-blue-900"
+              >
+                Submit
+              </Button>
+            </form>
+          </Form>
+        </div>
       </div>
     </div>
   );

@@ -53,17 +53,26 @@ const Contact = () => {
     },
   });
 
+
   const sendForm = async (dataBody: object) => {
     const response = await axios.post(formUrl, dataBody)
-    console.log(response)
+
+    return(response.status)
   }
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
     console.log(values);
-    sendForm(values)
+    const status = await sendForm(values)
+    if(status === 200) {
+      alert("Your message has been sent!");
+      // Reset fields after submission.
+      form.setValue("name","");
+      form.setValue("email","");
+      form.setValue("message","");
+    } else {
+      alert("Something unexpected happened!");
+    }
   };
-
-
 
   return (
     <div className="flex flex-col mb-10 mx-auto">

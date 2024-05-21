@@ -1,4 +1,5 @@
 import { z } from "zod";
+import axios from "axios";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -18,6 +19,8 @@ import { Textarea } from "@/components/ui/textarea";
 import Title from "./Title";
 
 const Contact = () => {
+
+  const formUrl = "https://getform.io/f/lbjkvjwa"
   // Define the shape of the form using Zod schema
   const formSchema = z.object({
     name: z
@@ -50,44 +53,21 @@ const Contact = () => {
     },
   });
 
+  const sendForm = async (dataBody: object) => {
+    const response = await axios.post(formUrl, dataBody)
+    console.log(response)
+  }
+
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     console.log(values);
+    sendForm(values)
   };
+
+
 
   return (
     <div className="flex flex-col mb-10 mx-auto">
       <div className="flex justify-center items-center">
-        <form
-          action="https://getform.io/f/lbjkvjwa"
-          method="POST"
-          className="flex flex-col w-full md:w-7/12"
-        >
-          <Title>Contact</Title>
-          <input
-            type="text"
-            name="name"
-            placeholder="Name"
-            className="p-2 bg-transparent border-2 rounded-md focus:outline-none"
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            className="my-2 p-2 bg-transparent border-2 rounded-md focus:outline-none"
-          />
-          <textarea
-            name="message"
-            placeholder="Message"
-            rows={10}
-            className="mb-4 p-2 bg-transparent border-2 rounded-md focus:outline-none"
-          />
-          <button
-            type="button"
-            className="text-center inline-block px-8 py-3 w-max text-base font-medium rounded-md text-white bg-gradient-to-r from-cyan-600 to-blue-900 drop-shadow-md hover:stroke-white"
-          >
-            Work With Me
-          </button>
-        </form>
         <div className="flex flex-col w-full md:w-7/12">
           <Title>Contact</Title>
           <Form {...form}>
@@ -95,11 +75,12 @@ const Contact = () => {
               <FormField
                 control={form.control}
                 name="name"
+
                 render={({ field }) => (
-                  <FormItem>
+                  <FormItem className="space-y-1">
                     <FormLabel>Name</FormLabel>
                     <FormControl>
-                      <Input placeholder="Name" {...field} />
+                      <Input placeholder="Enter your name" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -109,10 +90,10 @@ const Contact = () => {
                 control={form.control}
                 name="email"
                 render={({ field }) => (
-                  <FormItem>
+                  <FormItem className="space-y-1">
                     <FormLabel>Email</FormLabel>
                     <FormControl>
-                      <Input type="email" placeholder="Email" {...field} />
+                      <Input type="email" placeholder="Enter your contact email" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -122,17 +103,17 @@ const Contact = () => {
                 control={form.control}
                 name="message"
                 render={({ field }) => (
-                  <FormItem>
+                  <FormItem className="space-y-1">
                     <FormLabel>Message</FormLabel>
                     <FormControl>
                       <Textarea
                         rows={10}
-                        placeholder="Type message here"
+                        placeholder="Enter your message"
                         {...field}
                       />
                     </FormControl>
                     <FormDescription>
-                      I will not share your contact info with anyone.
+                      Your contact information will not be shared with anyone.
                     </FormDescription>
                     <FormMessage />
                   </FormItem>

@@ -36,11 +36,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <CardTitle>{title}</CardTitle>
         </CardHeader>
         <CardContent>
+          <center>
+
           <img
             src={imgUrl}
             alt={title}
-            className="w-full object-cover cursor-pointer rounded-md"
-          />
+            className="w-full max-h-64 object-cover cursor-pointer rounded-md"
+            />
+            </center>
           <CardDescription className="mt-2 mx-2">{details}</CardDescription>
         </CardContent>
         <CardFooter className="flex-wrap justify-around mx-2 md:text-sm">

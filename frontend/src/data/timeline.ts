@@ -15,7 +15,7 @@ export default [
         year: '2015',
         title: 'Team Supervisor',
         duration: '13 years',
-        details: 'As I was transitioning out of the Army, I attended the Microsoft Systems and Software Academy for Software Development & Testing Fundamentals. This is where I learned C# and VB.Net while transitioning out of the Army. We primarily developed desktop applications using Visual Studio. Throughout my Army career I dabbled with various applications and bits of code.  Usually in the form of complex spreadsheets or simple database applications.',
+        details: 'As I was transitioning out of the Army, I attended the Microsoft Systems and Software Academy for Software Development & Testing Fundamentals. This is where I learned C# and VB.Net. We primarily developed desktop applications using Visual Studio. Throughout my Army career I dabbled with various applications and bits of code.  Usually in the form of complex spreadsheets or simple database applications.',
     },
     {
         year: '2001',

@@ -30,7 +30,7 @@ jobs:
         # working-directory: frontend
         env:
           # REPO: self
-          REPO: https://github.com/DeeJaeMann/portfolio
+          REPO: 'portfolio'
           BRANCH: build # The branch name where you want to push the assets
           FOLDER: frontend/dist # The directory where your assets are generated
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token

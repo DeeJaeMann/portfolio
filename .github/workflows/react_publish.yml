@@ -11,7 +11,7 @@ jobs:
     name: Build and Push
     steps:
       - name: git-checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Install all dependencies
         working-directory: frontend # Set working directory to /frontend/
@@ -30,8 +30,8 @@ jobs:
         # working-directory: frontend
         env:
           # REPO: self
-          REPO: portfolio
+          REPO: self
           BRANCH: build # The branch name where you want to push the assets
           FOLDER: frontend/dist # The directory where your assets are generated
-          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
           MESSAGE: "Build: ({sha}) {msg}" # The commit message

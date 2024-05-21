@@ -13,21 +13,23 @@ jobs:
       - name: git-checkout
         uses: actions/checkout@v2
 
-      - name: Change directory to /frontend/
-        run: cd frontend
+
 
       - name: Install all dependencies
-        # working-directory: frontend # Set working directory to /frontend/
+        working-directory: frontend # Set working directory to /frontend/
         run: npm install
 
       - name: Build
-        # working-directory: frontend # Set working directory to /frontend/
+        working-directory: frontend # Set working directory to /frontend/
         run: npm run build # The build command of your project
 
-
+      - name: Change directory to /frontend/
+        run: cd frontend
 
       - name: Push
+
         uses: s0/git-publish-subdir-action@develop
+        # working-directory: frontend
         env:
           REPO: self
           BRANCH: build # The branch name where you want to push the assets

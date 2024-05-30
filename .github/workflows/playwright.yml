@@ -30,10 +30,11 @@ jobs:
       name: Run React Dev Server - Background
       with:
         working-directory: frontend
-        run: npm run dev
+        run: |
+          npm ci
+          npm run dev
         wait-on: |
           http://localhost:5173
-          http-get://localhost:5173
         tail: true
         log-output-resume: stderr
         wait-for: 5m

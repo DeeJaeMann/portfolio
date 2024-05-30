@@ -37,6 +37,7 @@ const HomePage = () => {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
+      name="sun"
       className="w-6 h-6"
     >
       <path
@@ -54,6 +55,7 @@ const HomePage = () => {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="white"
+      name="moon"
       className="w-6 h-6"
     >
       <path
@@ -70,6 +72,7 @@ const HomePage = () => {
         variant="outline"
         size="icon"
         onClick={handleThemeSwitch}
+        name="theme"
         className="fixed p-1 z-10 right-20 top-4 bg-violet-300 text-lg rounded-md hover:bg-violet-400 dark:bg-orange-300 dark:hover:bg-orange-400"
       >
         {theme === "dark" ? sun : moon}

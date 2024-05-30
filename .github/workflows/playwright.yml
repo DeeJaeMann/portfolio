@@ -26,23 +26,25 @@ jobs:
     # - name: Run react server
     #   working-directory: frontend
     #   run: npm run dev
-    - uses: JarvusInnovations/background-action@v1
-      name: Run React Dev Server - Background
-      with:
-        working-directory: frontend
-        run: |
-          npm install
-          npm run dev
-        wait-on: http-get://localhost:5173
-        tail: true
-        log-output-resume: stderr
-        wait-for: 5m
-        log-output: stderr,stdout
-        log-output-if: failure
+    # - uses: JarvusInnovations/background-action@v1
+    #   name: Run React Dev Server - Background
+    #   with:
+    #     working-directory: frontend
+    #     run: |
+    #       npm install
+    #       npm run dev
+    #     wait-on: http-get://localhost:5173
+    #     tail: true
+    #     log-output-resume: stderr
+    #     wait-for: 5m
+    #     log-output: stderr,stdout
+    #     log-output-if: failure
 
     - name: Run Playwright tests
       working-directory: frontend
-      run: npx playwright test
+      run: |
+        npm run build --if-present
+        npx playwright test
     - uses: actions/upload-artifact@v4
       if: always()
       with:

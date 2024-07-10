@@ -13,7 +13,7 @@ const WingedEscapePage = () => {
     return (
         <>
             <center>
-            <Unity unityProvider={unityProvider} className="max-w-5l w-11/12 mx-auto" />
+            <Unity unityProvider={unityProvider} className="max-w-5l w-11/12 mx-auto min-w-96" />
             </center>
         </>
     )

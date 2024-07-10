@@ -3,10 +3,10 @@ import { Unity, useUnityContext } from "react-unity-webgl";
 const WingedEscapePage = () => {
 
     const { unityProvider } = useUnityContext({
-        loaderUrl: "/build/WebGL-v1.1.loader.js",
-        dataUrl: "/build/WebGL-v1.1.data.br",
-        frameworkUrl: "/build/WebGL-v1.1.framework.js.br",
-        codeUrl: "/build/WebGL-v1.1.wasm.br",
+        loaderUrl: "/wegame/WebGL-v1.1.loader.js",
+        dataUrl: "/wegame/WebGL-v1.1.data.br",
+        frameworkUrl: "/wegame/WebGL-v1.1.framework.js.br",
+        codeUrl: "/wegame/WebGL-v1.1.wasm.br",
     });
 
     return (

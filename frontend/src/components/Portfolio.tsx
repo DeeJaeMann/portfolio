@@ -4,7 +4,7 @@ import ProjectCard from "./ProjectCard";
 const Portfolio = () => {
   return (
     <div className="flex flex-col items-center justify-center md:flex-row">
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 xl:gird-cols-4">
         {portfolio.map((project, index) => (
           <ProjectCard
             key={index}

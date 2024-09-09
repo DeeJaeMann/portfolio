@@ -1,15 +1,9 @@
 export default [
     {
-        year: 'Today',
-        title: 'Game Programming',
-        duration: 'Current',
-        details: 'I am expanding my skillset to refresh my skills in C# and explore the Unity engine. This year I am working with a cross discipline team to release two games. I am planning on participating in game jams to further this exciting journey!'
-    },
-    {
         year: '2024',
         title: 'Software Engineer',
         duration: 'Current',
-        details: 'I have recently graduated from a full-stack development program with Code Platoon. By learning Python and JavaScript I am reigniting my passion for programming. I plan on refreshing my skills with C# in the near future.',
+        details: 'I have recently graduated from a full-stack development program with Code Platoon. By learning Python and JavaScript I am reigniting my passion for programming. In addition, I am refreshing skills with C# applying what I have learned with Code Platoon.',
     },
     {
         year: '2024',

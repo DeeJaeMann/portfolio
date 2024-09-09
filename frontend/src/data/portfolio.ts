@@ -20,11 +20,4 @@ export default [
     link: "https://github.com/DeeJaeMann/portfolio",
     details: "A professional website demonstrating my history and experience as a developer.",
   },
-  {
-    title: "Winged Escape",
-    imgUrl: "assets/WingedThumb.png",
-    stack: ["C#", "Unity"],
-    link: "https://fullsplashdev.itch.io/winged-escape",
-    details: "A plaformer game based off of the popular Flappy Bird. Images from Bevouliin, Music: Talking To Cows by Elvis Herod.",
-  },
 ];

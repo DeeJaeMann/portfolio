@@ -1,9 +1,19 @@
 name: Generate a build and push to another branch
 
+#on:
+#  push:
+#    branches:
+#      - main
+
+# Set this workflow to only execute on the main branch after tests pass
 on:
-  push:
+  workflow_run:
+    workflows: ["Playwright Tests"]
+    types:
+      - completed
     branches:
       - main
+
 
 jobs:
   build:

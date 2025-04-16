@@ -21,7 +21,7 @@ export default [
         year: '2001',
         title: 'Freelance CGI Programmer',
         duration: '2 years',
-        details: 'I developed various web applications using Perl on contract for a local web developer. The most enjoyable part was solving new problems for real world clients. I used OpenSUSE Linux to host my development web server on my local machine. This is also where I got my first taste of Regular Expressions. They are one of my favorite tools to use.',
+        details: 'I developed various web applications using Perl on contract for a local web developer. The most enjoyable part was solving new problems for real world clients. I used OpenSUSE Linux to host my development web server on my local machine. This is also where I got my first taste of Regular Expressions. They are one of my favorite tools to use. A little fun fact: CGI in web context means Common Gateway Interface.',
     },
     {
         year: '1992',

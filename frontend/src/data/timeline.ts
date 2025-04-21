@@ -1,9 +1,9 @@
 export default [
     {
-        year: 'Today',
+        year: '2024',
         title: 'Software Engineer',
-        duration: '1 year',
-        details: 'I have recently graduated from a full-stack development program with Code Platoon. By learning Python and JavaScript I am reigniting my passion for programming. I plan on refreshing my skills in C# and Perl in the near future.',
+        duration: 'Current',
+        details: 'I have recently graduated from a full-stack development program with Code Platoon. By learning Python and JavaScript I am reigniting my passion for programming. In addition, I am refreshing skills with C# applying what I have learned with Code Platoon.',
     },
     {
         year: '2024',
@@ -21,7 +21,7 @@ export default [
         year: '2001',
         title: 'Freelance CGI Programmer',
         duration: '2 years',
-        details: 'I developed various web applications using Perl on contract for a local web developer. The most enjoyable part was solving new problems for real world clients. I used OpenSUSE Linux to host my development web server on my local machine. This is also where I got my first taste of Regular Expressions. They are one of my favorite tools to use.',
+        details: 'I developed various web applications using Perl on contract for a local web developer. The most enjoyable part was solving new problems for real world clients. I used OpenSUSE Linux to host my development web server on my local machine. This is also where I got my first taste of Regular Expressions. They are one of my favorite tools to use. A little fun fact: CGI in web context means Common Gateway Interface.',
     },
     {
         year: '1992',
